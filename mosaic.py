@@ -2,7 +2,7 @@
 import cv2
 
 #画像読み込み
-img = cv2.imread("test.jpg")
+img = cv2.imread("kaoface.jpg")
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img_con = img.copy()
 
@@ -18,7 +18,7 @@ def mosaic_area(img, x, y, width, height, ratio=0.1):
     return dst
 
 # カスケードファイル読み込み
-cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
+cascade = cv2.CascadeClassifier(".\haarcascade_frontalface_alt2.xml")
 #顔検出
 faces = cascade.detectMultiScale(img_gray)
 #検出した顔にモザイク処理
