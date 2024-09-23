@@ -21,6 +21,7 @@ def add_days(date, days):
         month_days = 30
 
     # 日付の進め方
+    # 複数の月をまたいでも進めるようにループ
     new_day = date.day + days
     if new_day <= month_days:
         new_date = date.replace(day=new_day)
@@ -100,3 +101,6 @@ def test_days_diff():
     assert days_diff(datetime.datetime(2020, 1, 1), datetime.datetime(2021, 1, 1)) == 366
 
     print("All tests passed.")
+
+test_add_days()
+##test_days_diff()
